@@ -102,19 +102,16 @@ public class Auction
     
     public void close ()
     {
-        int parametro = 0;
         for (Lot lot: lots){
-            Lot lott = lots.get(parametro);
-            Bid bid = lott.getHighestBid();
+            Bid bid = lot.getHighestBid();
             if (bid == null){
-                System.out.println("Lote: " + lott + " , Aun no ha sido vendido");
+                System.out.println("Lote: " + lot.getNumber() + " , Aun no ha sido vendido");
             }
             else{
                 Person person = bid.getBidder();
                 String name = person.getName();
-                System.out.println("Lote: " + lott + " , Apuesta mas alta: " + bid.getValue() + " , Persona que ha realizado la puja: " + name);
+                System.out.println("Lote: " + lot.getNumber() + " , Apuesta mas alta: " + bid.getValue() + " , Persona que ha realizado la puja: " + name);
             }
-            parametro++;
         }
     }
 }
