@@ -114,4 +114,16 @@ public class Auction
             }
         }
     }
+    
+    public ArrayList<Lot> getUnsoId()
+    {
+        ArrayList<Lot> noVendidos = new ArrayList<Lot>();
+        for (Lot lot: lots){
+          Bid bid = lot.getHighestBid();
+          if (bid == null){
+              noVendidos.add(lot);
+          }
+       }
+       return noVendidos;
+    }
 }
