@@ -120,9 +120,9 @@ public class Auction
         for (Lot lot: lots){
             if (lot.getNumber() == number){
                 selectedLot = lot;
-                lots.remove(lot);
             }
         }
+        lots.remove(selectedLot);
         return selectedLot;
     }
 }
